@@ -1,101 +1,56 @@
-# 🔢 Sorting Visualizer
+# Sorting Visualizer
 
-> A Python + Tkinter desktop app that brings sorting algorithms to life — watch Bubble, Selection, and Insertion Sort work step-by-step in real time.
-
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square&logo=python)
-![Tkinter](https://img.shields.io/badge/GUI-Tkinter-orange?style=flat-square)
+A desktop app built with Python and Tkinter that visually shows how sorting algorithms work. I made this to better understand how Bubble Sort, Selection Sort, and Insertion Sort actually behave under the hood.
 
 ---
 
-## 📸 Preview
+## What it does
 
-Each bar represents a number in the array. Colors show what's happening at each step:
+You generate a random array of bars, pick a sorting algorithm, and watch it sort step by step. Each bar represents a number — taller bar means bigger number. Colors show what the algorithm is doing at each moment.
 
-| Color | Meaning |
-|-------|---------|
-| 🔵 Sky Blue | Unsorted element |
-| 🔴 Red | Currently being compared |
-| 🟡 Yellow | Current position (Selection Sort) |
-| 🟣 Purple | Minimum / Key element |
-| 🟢 Green | Sorted ✓ |
+- **Red** → elements being compared
+- **Yellow / Purple** → current position or minimum element
+- **Green** → sorted
+
+There's also a speed slider so you can slow it down if you want to follow along.
 
 ---
 
-## ✨ Features
+## How to run
 
-- 🎲 **Random Array Generation** — Generate a fresh 50-element array instantly
-- 📊 **3 Sorting Algorithms** — Bubble Sort, Selection Sort, Insertion Sort
-- ⚡ **Adjustable Speed** — Slow down or speed up the animation with a slider
-- 🎨 **Color-Coded Visualization** — See exactly which elements are being compared or swapped
-- 🖥️ **Smooth, Non-Blocking UI** — Uses `after()` instead of `time.sleep()` so the window never freezes
+Make sure you have Python 3 installed. Tkinter comes built-in so no extra installs needed.
 
----
-
-## 🧠 Algorithms
-
-| Algorithm | Time Complexity | Space Complexity |
-|-----------|----------------|-----------------|
-| Bubble Sort | O(n²) | O(1) |
-| Selection Sort | O(n²) | O(1) |
-| Insertion Sort | O(n²) | O(1) |
-
----
-
-## 🛠️ Tech Stack
-
-- **Python 3.x**
-- **Tkinter** — built-in Python GUI library (no extra installs needed)
-
----
-
-## 🚀 Getting Started
-
-**1. Clone the repository**
 ```bash
 git clone https://github.com/shreyansh-hub/Sorting-Visualizer.git
 cd Sorting-Visualizer
-```
-
-**2. Run the app**
-```bash
 python main.py
 ```
 
-> ✅ No external dependencies — Tkinter comes built into Python.
+---
+
+## Algorithms included
+
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
 
 ---
 
-## 📁 Project Structure
+## One thing worth mentioning
 
-```
-Sorting-Visualizer/
-│
-├── main.py          # Entry point — launches the Tkinter window
-└── visualizer.py    # Core logic — UI, drawing, and sorting algorithms
-```
+Early on I used `time.sleep()` for the animation delay, which froze the entire window. Switched to Tkinter's `after()` method instead — it schedules each step without blocking the main loop, so the UI stays responsive throughout.
 
 ---
 
-## 🎮 How to Use
+## Files
 
-1. Click **"Generate Array"** to create a random array
-2. Use the **speed slider** to set animation speed
-3. Click any sort button — **Bubble Sort**, **Selection Sort**, or **Insertion Sort**
-4. Watch the algorithm sort the array step-by-step
-5. Bars turn **green** when fully sorted ✅
+- `main.py` — starts the app
+- `visualizer.py` — everything else (UI, drawing, sorting logic)
 
 ---
 
-## 🔮 Future Enhancements
+## What I'd add next
 
-- [ ] Add Merge Sort and Quick Sort
-- [ ] Pause / Resume / Reset controls
-- [ ] Adjustable array size
-- [ ] Sound effects for comparisons and swaps
-- [ ] Step counter and comparison counter display
-
----
-
-## 👤 Author
-
-**Shreyansh** — [github.com/shreyansh-hub](https://github.com/shreyansh-hub)
+- Merge Sort and Quick Sort
+- Pause and reset controls
+- Adjustable array size
